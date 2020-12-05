@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration/Login</title>
+</head>
+<body>
+    <h1>Welcome to Cryptopinion</h1>
+    {% if messages %}
+    <ul class="messages">
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+    </ul>
+    {% endif %}
+    <h2>Registration</h2>
+    <form action="/register" method="POST">
+        {% csrf_token %}
+        First Name: <input type="text" name="first_name">
+        Last Name: <input type="text" name="last_name">
+        Email: <input type="text" name="email">
+        Password: <input type="password" name="password">
+        Password Confirmation:<input type="password" name="confpassword">
+        <input type="submit" value="Register">
+    </form>
+    <h2>Login</h2>
+    <form action="/login" method="POST">
+        {% csrf_token %}
+        Email: <input type="text" name="email">
+        Password: <input type="password" name="password">
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>
