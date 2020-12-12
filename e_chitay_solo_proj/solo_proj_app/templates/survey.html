@@ -11,7 +11,30 @@
     <h1>Survey (temporary name)</h1>
     <a href="/logout">Logout</a>
     <form action="/cryptosurvey" method="POST">
-
+        {% csrf_token %}
+        <h3>Do you own any Cryptocurrency?</h3>
+        <select name="Q1" id="Q1">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <h3>Are you more bullish on Bitcoin or Ethereum?</h3>
+        <select name="Q2" id="Q2">
+            <option value="Bitcoin">Bitcoin</option>
+            <option value="Ethereum">Ethereum</option>
+        </select>
+        <h3>Which Alt coin are you more bullish on?</h3>
+        <select name="Q3" id="Q3">
+            <option value="Chainlink">Chainlink</option>
+            <option value="Band Protocol">Band Protocol</option>
+            <option value="Polkadot">Polkadot</option>
+            <option value="Uniswap">Uniswap</option>
+        </select>
+        <h3>Will Bitcoin get to 100k?</h3>
+        <select name="Q4" id="Q4">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <input type="submit" value="submit">
     </form>
 </body>
 
